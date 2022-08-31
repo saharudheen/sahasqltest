@@ -16,14 +16,14 @@ import pyodbc
 st.title("SR using streamlit !!!")
 
 if st.button('SPEAK'):
-    current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
-    st.write(current_dir)
-    path = Path(__file__).parent.absolute()
+    #current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
+    #st.write(current_dir)
+    #path = Path(__file__).parent.absolute()
     #fp2=path('sahansha.accdb')
-    fp = Path(path,'dbfiles','sahansha1.accdb')
+    #fp = Path(path,'dbfiles','sahansha1.accdb')
     #fp1="C:\Users\sahar\Desktop\srstreamlit\sahansha.accdb"
-    st.write(path)
-    st.write(fp)
+    #st.write(path)
+    #st.write(fp)
     #filespec=r"fp"
     #DBQl =str(current_dir)+"/dbfiles/sahansha1.accdb"
     #st.write('how are u')

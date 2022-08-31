@@ -3,3 +3,4 @@ pandas==1.4.2
 pyodbc==4.0.34
 SpeechRecognition==3.8.1
 streamlit==1.12.0
+mysql-connector-python==x.x.x
