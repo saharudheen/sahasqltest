@@ -4,3 +4,4 @@ pyodbc==4.0.34
 SpeechRecognition==3.8.1
 streamlit==1.12.0
 mysql-connector-python==8.0.30
+streamlit-aggrid==0.3.2
