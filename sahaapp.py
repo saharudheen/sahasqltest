@@ -1,3 +1,4 @@
+import requests
 import mysql.connector
 from mysql.connector import Error
 from st_aggrid import AgGrid
@@ -32,7 +33,7 @@ if st.button('SPEAK'):
     #conn = pyodbc.connect(r"Driver={Microsoft Access Driver (*.mdb, *.accdb)};"+r"DBQ={};".format(fp))
     
     #conn = pyodbc.connect(r"Driver={Microsoft Access Driver (*.mdb, *.accdb)};"+ r"DBQ=C:\Users\sahar\Desktop\srstreamlit\dbfiles\sahansha1.accdb;"+r"UID=root;"+r"PWD=saha;")
-    toml_data = toml.load(".streamlit\secrets.toml")
+    toml_data = toml.load("secrets.toml")
     # saving each credential into a variable
     HOST_NAME = toml_data['mysql']['host']
     DATABASE = toml_data['mysql']['database']
