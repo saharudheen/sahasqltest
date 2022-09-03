@@ -3,6 +3,7 @@ from mysql.connector import Error
 from st_aggrid import AgGrid
 import pandas as pd
 from pathlib import Path
+import toml
 
 import streamlit as st
 #import pypyodbc
@@ -31,8 +32,17 @@ if st.button('SPEAK'):
     #conn = pyodbc.connect(r"Driver={Microsoft Access Driver (*.mdb, *.accdb)};"+r"DBQ={};".format(fp))
     
     #conn = pyodbc.connect(r"Driver={Microsoft Access Driver (*.mdb, *.accdb)};"+ r"DBQ=C:\Users\sahar\Desktop\srstreamlit\dbfiles\sahansha1.accdb;"+r"UID=root;"+r"PWD=saha;")
+    toml_data = toml.load(".streamlit\secrets.toml")
+    # saving each credential into a variable
+    HOST_NAME = toml_data['mysql']['host']
+    DATABASE = toml_data['mysql']['database']
+    PASSWORD = toml_data['mysql']['password']
+    USER = toml_data['mysql']['user']
+    PORT = toml_data['mysql']['port']
     def init_connection():
-        return mysql.connector.connect(**st.secrets["mysql"])
+        #mydb = connection.connect(host=HOST_NAME, database=DATABASE, user=USER, passwd=PASSWORD, use_pure=True)
+        #return mysql.connector.connect(**st.secrets["mysql"])
+        return  mysql.connector.connect(host=HOST_NAME, database=DATABASE, user=USER, passwd=PASSWORD,port=PORT, use_pure=True)
 
     conn = init_connection()
     #conn = mysql.connector.connect(host='localhost',database='sahanum',port='124',
